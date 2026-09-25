@@ -1,0 +1,14 @@
+{
+  "project": "Web_shop_corrected",
+  "validated_files": 23,
+  "checks": [
+    "All Java source files have matching package declarations and paths.",
+    "TestNG listener is registered in testng.xml.",
+    "Excel DataProvider references TestData/TestData.xlsx and RegistrationData sheet.",
+    "Extent report path is reports/ExtentReport.html.",
+    "Failure screenshots path is reports/screenshots/.",
+    "BaseClass uses @BeforeMethod/@AfterMethod and closes driver with quit().",
+    "Original electronics locator problem is avoided by using direct category navigation and explicit waits."
+  ],
+  "execution": "Not executed in this environment: Maven is not installed and external dependency/browser-driver downloads are unavailable."
+}
