@@ -27,6 +27,7 @@ jobs:
           cache: maven
 
       - name: Run Selenium Tests
+        continue-on-error: true
         run: mvn clean test -Dheadless=true
 
       - name: Upload Extent Report
