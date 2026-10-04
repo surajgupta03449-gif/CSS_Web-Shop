@@ -25,6 +25,9 @@ public class ProductPage {
         WaitUtility
                 .clickable(driver, firstAddToCart)
                 .click();
+
+        WaitUtility
+                .visible(driver, notification);
     }
 
     public boolean isCartNotificationDisplayed() {
