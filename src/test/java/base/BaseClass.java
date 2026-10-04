@@ -37,9 +37,19 @@ public class BaseClass {
 
         browser = browser.trim().toLowerCase();
 
-        boolean headless =
-                ConfigReader.getBoolean("headless", false);
+//        boolean headless =
+//                ConfigReader.getBoolean("headless", false);
 
+        String headlessProperty = System.getProperty("headless");
+
+        boolean headless;
+
+        if (headlessProperty != null) {
+            headless = Boolean.parseBoolean(headlessProperty);
+        } else {
+            headless = ConfigReader.getBoolean("headless", false);
+        }
+        
         switch (browser) {
 
         case "chrome":

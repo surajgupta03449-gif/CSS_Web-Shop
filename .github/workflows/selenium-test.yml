@@ -27,7 +27,7 @@ jobs:
           cache: maven
 
       - name: Run Selenium Tests
-        run: mvn clean test
+        run: mvn clean test -Dheadless=true
 
       - name: Upload Extent Report
         if: always()
@@ -42,6 +42,7 @@ jobs:
         with:
           name: Screenshots
           path: reports/screenshots/
+          if-no-files-found: ignore
 
       - name: Upload Test Results
         if: always()
