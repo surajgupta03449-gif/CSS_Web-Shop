@@ -70,6 +70,10 @@ public class HomePage {
     }
 
     public void openCart() {
+
+        WaitUtility
+                .invisible(driver, By.id("bar-notification"));
+
         WaitUtility
                 .clickable(driver, cartLink)
                 .click();

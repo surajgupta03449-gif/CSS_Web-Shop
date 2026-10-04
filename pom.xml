@@ -6,9 +6,17 @@
 
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>Web_shop</groupId>
-    <artifactId>Web_shop_corrected</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <groupId>com.suraj</groupId>
+    <artifactId>selenium-web-shop</artifactId>
+    <version>1.0.0</version>
+
+<distributionManagement>
+    <repository>
+        <id>github</id>
+        <name>GitHub Packages</name>
+        <url>https://maven.pkg.github.com/surajgupta03449-gif/CSS_Web-Shop</url>
+    </repository>
+</distributionManagement>
 
     <properties>
         <maven.compiler.source>21</maven.compiler.source>
