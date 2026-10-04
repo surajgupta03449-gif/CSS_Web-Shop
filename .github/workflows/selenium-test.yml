@@ -36,6 +36,7 @@ jobs:
         with:
           name: Extent-Report
           path: reports/ExtentReport.html
+          if-no-files-found: warn
 
       - name: Upload Screenshots
         if: always()
@@ -51,15 +52,16 @@ jobs:
         with:
           name: TestNG-Results
           path: target/surefire-reports/
+          if-no-files-found: warn
 
-      -name: Prepare GitHub Pages Report
-  if: success()
-  run: |
-    mkdir -p _site
-    cp reports/ExtentReport.html _site/index.html
-    if [ -d "reports/screenshots" ]; then
-      cp -r reports/screenshots _site/screenshots
-    fi
+      - name: Prepare GitHub Pages Report
+        if: success()
+        run: |
+          mkdir -p _site
+          cp reports/ExtentReport.html _site/index.html
+          if [ -d "reports/screenshots" ]; then
+            cp -r reports/screenshots _site/screenshots
+          fi
 
       - name: Upload Pages Artifact
         if: success()
