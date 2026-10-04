@@ -52,12 +52,14 @@ jobs:
           name: TestNG-Results
           path: target/surefire-reports/
 
-      - name: Prepare GitHub Pages Report
-        if: success()
-        run: |
-          mkdir -p _site
-          cp reports/ExtentReport.html _site/index.html
-          cp -r reports/screenshots _site/screenshots
+      -name: Prepare GitHub Pages Report
+  if: success()
+  run: |
+    mkdir -p _site
+    cp reports/ExtentReport.html _site/index.html
+    if [ -d "reports/screenshots" ]; then
+      cp -r reports/screenshots _site/screenshots
+    fi
 
       - name: Upload Pages Artifact
         if: success()
